@@ -1,3 +1,5 @@
+//using no structure
+
 #include<stdio.h>
 
 int main()
