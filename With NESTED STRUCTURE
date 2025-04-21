@@ -1,3 +1,5 @@
+//using nested structure
+
 #include<stdio.h>
 
 struct circle{
