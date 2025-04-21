@@ -1,0 +1,101 @@
+#include<stdio.h>
+
+int main()
+{
+    int cir_id[100],rec_id[100],cube_id[100],n;
+    float cir_dia[100],rec_hi[100],rec_wid[100], cube_hi[100], cube_wid[100], cube_dep[100];
+    int cir_count=0, rec_count=0, cube_count=0, count=0;
+    float cir_area=0, rec_area=0, cube_area;
+    while(1)
+    {
+        printf("Choose the option:\n 1. Add a circle\n 2. Add a rectangular\n 3. Add a cube\n 4. List items\n 5. Get statiscit\n 6. Exit\n");
+        printf("Choose the option:");
+        scanf("%d",&n);
+        switch(n)
+        {
+        case 1:
+            printf("What is the diameter:");
+            scanf("%f",&cir_dia[cir_count]);
+            cir_id[cir_count]=++count;
+            cir_area=cir_area+(3.14*cir_dia[cir_count]*cir_dia[cir_count])/4;
+            cir_count++;
+            break;
+
+        case 2:
+            printf("What is the height:");
+            scanf("%f",&rec_hi[rec_count]);
+            printf("What is the width:");
+            scanf("%f", &rec_wid[rec_count]);
+            rec_id[rec_count]=++count;
+            rec_area=rec_area+(rec_hi[rec_count]*rec_wid[rec_count]);
+            rec_count++;
+            break;
+
+        case 3:
+            printf("What is the height:");
+            scanf("%f",&cube_hi[cube_count]);
+            printf("What is the width:");
+            scanf("%f",&cube_wid[cube_count]);
+            printf("What is the depth:");
+            scanf("%f",&cube_dep[cube_count]);
+            cube_id[cube_count]=++count;
+            cube_area=cube_area+(cube_hi[cube_count]*cube_wid[cube_count]*cube_dep[cube_count]);
+            cube_count++;
+            break;
+
+        case 4:
+
+            printf("\n");
+            for(int i=1;i<=count;i++)
+            {
+            for(int j=0;j<cir_count;j++)
+            {
+             if(cir_id[j]==i)
+            {
+                printf("%d circle %f\n",cir_id[j], cir_dia[j]);
+            }
+            }
+
+            for(int j=0;j<rec_count;j++)
+            {
+                if(rec_id[j]==i)
+                {
+                printf("%d rectangular %f %f\n", rec_id[j], rec_hi[j], rec_wid[j]);
+            }
+            }
+
+            for(int j=0;j<cube_count;j++)
+            {
+                if(cube_id[j]==i)
+                {
+                printf("%d cube %f %f %f\n", cube_id[j], cube_hi[j], cube_wid[j], cube_dep[j]);
+            }
+            }
+            }
+
+
+            break;
+
+        case 5:
+
+            printf("Total shapes:%d\n",cir_count+rec_count+cube_count);
+            printf("Total number of Rectangles:%d\n", rec_count);
+            printf("Total number of Circles:%d\n",cir_count);
+            printf("Total number of Cubes:%d\n",cube_count);
+            printf("Total area=%f\n",rec_area+cir_area+cube_area);
+            printf("Total area occupied by rectangle: %f (%f%)\n",rec_area,(rec_area/(rec_area+cir_area+cube_area)*100));
+            printf("Total area occupied by circle: %f(%f%)\n",cir_area,(cir_area/(rec_area+cir_area+cube_area)*100));
+            printf("Total area occupied by cube: %f(%f%)\n",cube_area,(cube_area/(rec_area+cir_area+cube_area)*100));
+
+            break;
+
+        case 6:
+            return 0;
+            break;
+
+
+
+
+    }
+}
+}
