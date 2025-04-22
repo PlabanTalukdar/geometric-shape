@@ -93,7 +93,11 @@ int main()
 
         case 6:
             return 0;
-            break;
+
+
+         default:
+            printf("Choose valid option\n");
+
 
 
 
