@@ -118,6 +118,10 @@ int main()
 
             return 0;
 
+         default:
+            printf("Choose valid option\n");
+
+
 
         }
     }
